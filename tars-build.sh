@@ -1,7 +1,7 @@
 # 修改docker配置
 sudo cp /lib/systemd/system/docker.service /etc/systemd/system  \
    && sudo sed -i 's/\ -H\ fd:\/\// -H\ unix:\/\/\/var\/run\/docker.sock -H tcp:\/\/0.0.0.0\ /g' /etc/systemd/system/docker.service \
-   && sduo systemctl daemon-reload && sudo service docker restart
+   && sudo systemctl daemon-reload && sudo service docker restart
 
 # 写入dockerfile
 cat <<-EOF >Dockerfile
